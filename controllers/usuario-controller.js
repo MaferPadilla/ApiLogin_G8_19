@@ -37,5 +37,28 @@ UsuarioController.post = (req, res,next) => {
     })
   
 }
+//método getAll
+UsuarioController.getAll = (req, res, next) => {
+  UsuarioModel.getAll((err, rows) => {
+      if (err) 
+      {
+          let locals = {
+              title : 'Erros al consultar la base de datos',
+              description : 'Error de Sintaxis SQL',
+              error :err
+          }
+
+          res.render('error', locals)
+      }
+       else 
+      {
+          let locals = {
+              title: 'Lista Usuarios',
+              data : rows
+           }
+           res.status(200).send(rows.rows)
+      }
+  });
+};
 
 module.exports = UsuarioController;

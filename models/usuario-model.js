@@ -18,5 +18,8 @@ UsuarioModel.post = (data, cb) =>
        data.fecha_registro
    ],
  cb);
+ //--------------------------------------
+ UsuarioModel.getAll = (cb) =>
+ conn.query("SELECT * FROM Usuario", cb);
 
  module.exports = UsuarioModel;
