@@ -16,7 +16,11 @@ LoginController.login = (req, res, next) => {
     }
 
     if (!usuario) {
-      return res.status(401).json({ error: 'Usuario invalido' });
+      //return res.status(401).json({ error: 'Usuario invalido' });
+      var jsonResponse = {
+        message: `Usuario invalido`
+      };
+      return res.json(jsonResponse);
     }
 
     const dulce = usuario;
