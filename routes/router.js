@@ -11,6 +11,6 @@ router
   .post("/usuario/autenticar", LoginController.login)
   //Lista Usuario
   .get("/usuario/getall",UsuarioController.getAll)
-
+  .post("/usuario/insertar/:codigo_usuario", UsuarioController.post)
 
 module.exports = router;

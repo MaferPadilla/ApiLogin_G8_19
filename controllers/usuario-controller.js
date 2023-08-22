@@ -37,6 +37,7 @@ UsuarioController.post = (req, res,next) => {
     })
   
 }
+
 //método getAll
 UsuarioController.getAll = (req, res, next) => {
   UsuarioModel.getAll((err, rows) => {
